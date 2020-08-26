@@ -8,6 +8,8 @@ const hbs = require("hbs");
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // Setting up paths for Express
 const publicDirPath = path.join(__dirname, "../public");
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -104,7 +106,6 @@ app.get("*", (req, res) => {
     });
 });
 
-const port = 3000;
 app.listen(port, () => {
     console.log(`Server is up on port ${port}.`);
 });
